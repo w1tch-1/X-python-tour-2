@@ -3,11 +3,13 @@ import numpy as np
 from random_mazes import random_maze
 
 
-maze = np.array(random_maze)
-
-
+maze = np.array(random_maze())
 rows, cols = maze.shape
-cell_size = 150
+cell_size = 100
+root = tk.Tk()
+root.title("Random maze with backtracking")
+canvas = tk.Canvas(root, width=cols * cell_size, height=rows * cell_size)
+canvas.pack()
 
 
 def draw_maze():
@@ -39,10 +41,6 @@ def solve_maze(x, y):
     return False
 
 
-root = tk.Tk()
-root.title("Random maze with backtracking")
-canvas = tk.Canvas(root, width=cols * cell_size, height=rows * cell_size)
-canvas.pack()
 draw_maze()
 solve_maze(0, 0)
 root.mainloop()
