@@ -3,7 +3,7 @@ import numpy as np
 from random_mazes import random_maze
 
 
-maze = np.array(random_maze())
+maze = np.array(random_maze)
 rows, cols = maze.shape
 cell_size = 100
 root = tk.Tk()
@@ -38,6 +38,8 @@ def solve_maze(x, y):
         next_x, next_y = x + direction[0], y + direction[1]
         if solve_maze(next_x, next_y):
             return True
+    canvas.create_rectangle(y * cell_size, x * cell_size, (y + 1) * cell_size, (x + 1) * cell_size, fill="red")
+    canvas.update()
     return False
 
 
