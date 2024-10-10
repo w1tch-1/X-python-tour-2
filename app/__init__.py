@@ -31,7 +31,7 @@ def get_weather(city):
         result = 'Cool'
     else:
         result = 'Nice weather we’re having'
-    end_result = [f'weather in the city: {city}', f'temperature: {current_weather}C° {wd}', f'{result}']
+    end_result = [f'Weather in the city: {city}', f'Temperature: {current_weather}C° {wd}', f'{result}']
     return end_result
 
 
